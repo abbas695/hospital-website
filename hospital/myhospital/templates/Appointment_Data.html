@@ -1,0 +1,56 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+            <h1> <i class="fas fa-users"></i> Patients</h1>
+            <br>
+            <nav class="navbar navbar-expand-lg navbar:hover bg-light"  style="background-color: rgb(178, 179, 184); padding-bottom: 5px; padding-top: 5px;width:100%;">
+              <div class="container-fluid" >
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbar Nav:hover" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                   
+                      <h class="navbar-brand" href="#" style="color:black; font-size: 0.85m; padding-right: 16.5cm; ">Appointments_Data</h>
+                      <a class="btn btn-success bnt-lg float-right" href="{% url 'create_appointment' %}" role="button"><i class="fas fa-user-plus"></i>Add Appointment Date</a>      
+      
+                  </ul>
+                </div>
+              </div>
+            </nav>
+      
+
+            <h1
+                style="background-color: rgb(58, 40, 70); color: rgb(170, 199, 199); text-align: center; text-decoration: linen;padding-bottom: 0.25cm; padding-top: 0.25cm; font-variant-east-asian: ruby;">
+                Patient_Appointments_Data</h1>
+
+            <table class="table  table-light table-striped table-hover">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Appointment_place</th>
+                        <th scope="col">Appointment_Date</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in doctors_appointment_data %}
+                    <!-- DoctorsappointmentsData is the data that had retrieved from"mycursor.fetchall()" that exists in server.py to retrieve all data in Doctorsappointments table -->
+                    <tr>
+
+                        <td>{{data.appointment_place}}</td>
+                        <td>{{data.appointment_time}}</td>
+
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+{% endblock %}
+

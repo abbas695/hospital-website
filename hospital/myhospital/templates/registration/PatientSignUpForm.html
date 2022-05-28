@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+      <h1
+        style="color: rgb(49, 61, 68); background-color:rgb(75, 219, 197) ; margin-bottom: 0; font-size: 1cm; padding-left: 40px; padding-top: 42px;padding-bottom:17px;">
+        Please fill this form to add you as a Patient</h1>
+      <form method="POST" action="" enctype="multipart/form-data" role="form"
+        style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(214, 212, 228);">
+        {% csrf_token %}
+        <div class="container-fluid">
+          <label for="name" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Name</label>
+          <div class="col-sm-4">
+            {{form.name}}
+          </div>
+          
+          <label for="username" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">User name</label><br>
+          <div class="col-sm-4">
+            {{form.username}}
+          </div>
+
+          <label for="age" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Age</label>
+          <div class="col-sm-4">
+            {{form.age}}
+          </div>
+          <label for="gender" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.560cm; padding-left: 10px;">Gender</label>
+          <div class="col-sm-4">
+            {{form.gender}}
+          </div>
+          <label for="email" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Email</label>
+          <div class="col-sm-4">
+            {{form.email}}
+          </div>
+          <label for="phone" style="font-size: 0.60cm; padding-top: 10px; padding-left: 10px;">Enter your phone</label><br>
+          <div class="col-sm-4">
+            {{form.phone}}
+          </div>
+          <label for="address" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your address</label><br>
+          <div class="col-sm-4">
+            {{form.address}}
+          </div>
+          <label for="patient_bill" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Patient bill</label><br>
+          <div class="col-sm-4">
+            {{form.patient_bill}}
+          </div>
+          <label for="medical_report" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Medical report</label><br>
+          <div class="col-sm-4">
+            {{form.medical_report}}
+          </div>
+
+          <span  for="password1" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px; display:inline-block !important">Password</span>
+          <div class="col-sm-4" style="display:inline-block !important">
+            {{form.password1}}
+          </div>
+
+        
+        <span    for="password2" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px; display:inline-block !important">Password again</span>
+          <div class="col-sm-4" style="display:inline-block !important">
+            {{form.password2}}
+          </div> 
+
+
+          <br/>
+          <br/>
+          <br/>
+
+          <div style="text-align: center;">
+            <button type="submit" name="action" class="btn btn-dark btn:hover"
+              style="text-align: center; padding: 10px 25px; margin:4px 2px;">Submit</button>
+
+          </div>
+        </div>
+      </form>
+{% endblock %}
+

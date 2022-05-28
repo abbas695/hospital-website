@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+        <h1
+          style="color: rgb(49, 61, 68); background-color:rgb(220, 210, 233) ; margin-bottom: 0; font-size: 1cm; padding-left: 40px; padding-top: 42px;padding-bottom:17px;">
+          Please fill this form to add you as a nurse</h1>
+          <div class="container-fluid">
+        <form method="POST" action="" enctype="multipart/form-data" role="form"
+          style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">
+          {% csrf_token %}
+
+          <label for="first_name" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">First Name</label><br>
+          <div class="col-sm-4">
+            {{form.first_name}}
+          </div>
+
+          <label for="second_name" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Middel Name</label><br>
+          <div class="col-sm-4">
+            {{form.second_name}}
+          </div>
+
+          <label for="third_name" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Last Name</label><br>
+          <div class="col-sm-4">
+            {{form.third_name}}
+          </div>
+
+          <label for="age" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter Your Age</label><br>
+          <div class="col-sm-4">
+            {{form.age}}
+          </div>
+
+          <label for="salary" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter Your Salary</label><br>
+          <div class="col-sm-4">
+            {{form.salary}}
+          </div>
+          
+          <label class="form-check-label" for="flexRadioDefault1"
+            style=" margin-left: 10px;padding-top: 10px; color: rgb(69, 73, 77); font-size: 0.65cm;">
+            Select a gender:
+          </label>
+          {{form.gender}}
+
+          <label for="shift" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Your Shift time</label><br>
+          <div class="col-sm-4">
+            {{form.shift}}
+          </div>
+
+          <label for="email" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your 
+            email</label><br>
+          <div class="col-sm-4">
+            {{form.email}}
+          </div>
+
+          <label for="phone" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your phone
+            number</label><br>
+          <div class="col-sm-4">
+            {{form.phone}}
+          </div>
+
+          <label for="address" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your address
+            </label><br>
+          <div class="col-sm-4">
+            {{form.address}}
+          </div>
+
+          <div  style="text-align: center;">
+          <button type="submit" class="btn btn-dark btn:hover"
+            style="text-align: center; padding: 10px 25px; margin:4px 2px;">Submit</button>
+        
+          </div>  
+        </div>
+        </form>
+{% endblock %}

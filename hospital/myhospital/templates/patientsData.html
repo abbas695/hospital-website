@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+      <h1> <i class="fas fa-users"></i> Patients</h1>
+      <br>
+
+        <div class="container-fluid" >
+          {% if request.user.is_nurse %}
+          <a class="navbar-brand" href="{% url 'patients_data' %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3);">Patients_Data</a>
+          {% else %}{% endif %}
+          {% if request.user.is_doctor %}
+          <a class="navbar-brand" href="{% url 'patients_data' %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3);">Patients_Data</a>
+          {% else %}{% endif %} 
+          {% if request.user.is_patient %}
+          <a class="navbar-brand" href="{% url 'patient_appointment' request.user.id %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3); ">Appointments_Data</a>
+          <a class="navbar-brand" href="{% url 'patient_test' request.user.id %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3); ">Tests</a>
+          {% else %}{% endif %}
+                <a class="btn btn-success bnt-lg float-right" href="{% url 'patient_signup' %}" role="button"><i class="fas fa-user-plus"></i>new
+                  Patient</a>
+
+
+      <h1
+        style="background-color: rgb(58, 40, 70); color: rgb(170, 199, 199); text-align: center; text-decoration: linen; padding-top: 0.25cm;padding-bottom:0.25cm; font-variant-east-asian: ruby;">
+        Patients Data</h1>
+
+      <table class="table  table-light table-hover">
+        <thead>
+          <tr>
+
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Medical_Report</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">E_mail</th>
+            <th scope="col">Patient_bill</th>
+            {% comment %} <th scope="col">Doctor_ID</th>
+            <th scope="col">nurse_ID</th> {% endcomment %}
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in patients_data %}
+          <!-- PatientssData is the data that had retrieved from"mycursor.fetchall()" that exists in server.py to retrieve all data in Patients table -->
+          <tr>
+
+            <td>{{data.user.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.medical_report}}</td>
+            <td>{{data.age}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.patient_bill}}</td>
+            {% comment %} <td>{{data.9}}</td>
+            <td>{{data.10}}</td> {% endcomment %}
+
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+{% endblock %}

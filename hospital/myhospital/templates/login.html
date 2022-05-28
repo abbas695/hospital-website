@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block main %}
+                                  <div class="container-fluid" style="background-color: rgb(75, 219, 197); margin-bottom: 0; font-size: 1cm; padding-left: 15px; padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="navbar-brand" href="{% url 'login' %}" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Sign in</a>
+                                    <a class="navbar-brand" href="{% url 'SignUp' %}" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Sign up</a>
+                                  </div>
+                    <h1 style="color: rgb(49, 61, 68); background-color:rgb(214, 212, 228) ; margin-bottom: 0; font-size: 1cm; padding-left: 15px; padding-top: 10px;padding-bottom: 10px;">Sign in:</h1>
+                    <form action="{% url 'login' %}" method="POST" novalidate>
+                      {% csrf_token %}
+                         {% for field in form.visible_fields %}
+                           <div class="form-group" style="background-color:rgb(214, 212, 228)">
+                               {{ field.label_tag }}
+                                  {% render_field field class="form-control" %}
+                                    {% if messages%}
+                                      {% for message in messages %}
+                                        <span style="color:red">{{ message }}</span>
+                                      {% endfor %}
+                                     {% endif %}
+                         {% endfor %}
+                         <br>
+                             <input type="submit" value="Login" class="btn btn-block btn-primary">
+                           </div>
+                    </form>
+                    <div class="jumbotron jumbotron-fluid" style="height:fit-content">
+                      <div class="container" > 
+                        <p class="lead" style="font-size: 0.75cm;"> &emsp; &emsp; Radiology is a medical specialty that uses imaging to diagnose and treat diseases seen within the body,,,<br> &emsp; if you want to learn more about radiology department please press on this bottun.. </p>
+                        <div style="padding-top: 1cm; padding-left: 1cm;">
+                          <a target="_blank" href="https://www.royalfree.nhs.uk/services/services-a-z/radiology/about-radiology/#:~:text=Radiology%20is%20a%20medical%20specialty,diseases%20seen%20within%20the%20body.&text=The%20radiology%20department%20may%20also,range%20of%20equipment%20listed%20above."  style="background-color: rgb(214, 212, 228); color: rgb(49, 61, 68); border-color: black;font-size: 0.55cm; "class="btn btn-primary">Learn more</a>
+                      </div>
+                      </div>
+                    </div>
+                    
+{% endblock %}

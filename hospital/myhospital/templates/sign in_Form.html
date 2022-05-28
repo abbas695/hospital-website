@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/549d680672.js" crossorigin="anonymous"></script>
+    <title>sign in </title>
+  </head>
+  <body>
+    <div class="wrapper" >
+      <div class="sidebar">
+
+
+        <h4><i class="fab fa-atlassian" style=" margin-bottom: 5px; color: rgba(157, 219, 75, 0.925);"></i> Radiology <br>
+          Department</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> Home </a></li>
+          <li><a href="#"><i class="fas fa-user-circle"></i>Account</a></li>
+
+          <li><a href="#"><i class="fas fa-sitemap"></i> Department </a></li>
+
+          <li><a href="#"><i class="fas fa-user-md"></i>Doctor</a></li>
+          <li><a href="#"><i class="fas fa-user-alt"></i>Patient</a></li>
+          <li><a href="#"><i class="fas fa-briefcase-medical"></i></i>Nurse</i></a></li>
+          <li><a href="#"><i class="fas fa-address-book"></i></i>contact us !</i></a></li>
+  
+        </ul>
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+  
+  
+        </div>
+      </div>
+          
+        <div class="main-content">
+          
+            <h1> <i class="fas fa-user-circle"></i> Account</h1>
+            <br>
+            <nav class="navbar navbar-expand-lg navbar:hover bg-light"  style="background-color: rgb(178, 179, 184); padding-bottom: 5px; margin-top: 0%;">
+              <div class="container-fluid" >
+                <a class="navbar-brand" href="#" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Sign in</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbar Nav:hover" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    
+                      <a class="navbar-brand" href="#" style="color:black; font-size: 0.85m;padding-right: 25px;">Sign up</a>
+                    
+      
+                    
+      
+                  </ul>
+                </div>
+              </div>
+            </nav>
+      
+       
+          <h1 style="color: rgb(49, 61, 68); background-color:rgb(220, 210, 233) ; margin-bottom: 0; font-size: 1cm; padding-left: 15px; padding-top: 10px;padding-bottom: 10px;" >Sign in:</h1>
+          <form action="{{url_for(#sign_ins_form_name_in__flask_server_route#)}}" method="POST" style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">
+    
+            <div class="mb-3">
+      <label for="exampleInputEmail1"  class="form-label col-sm-2 col-form-label " style="font-size: 0.65cm; padding-left: 20px;">User Name</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control form-control-lg" id="colFormLabelSm" name= "user_name" style="margin-bottom: 0; ">
+      </div>
+      <div id="emailHelp" class="form-text" style="font-size:0.5cm ; margin-bottom: 0;">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1"  class="form-label col-sm-2 col-form-label col-form-label-lg" style="font-size: 0.65cm; padding-left: 20px">Password</label>
+      <div class="col-sm-4">
+        <input type="passward" class="form-control form-control-lg" id="colFormLabelSm" name= "pass" >
+      </div>    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label col-sm-2 col-form-label col-form-label-lg" style="font-size: 0.65cm; padding-left: 20px" >Role</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control form-control-lg" id="colFormLabelSm" name= "user_name" >
+          </div>     
+         </div>
+      <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" style="background-color: rgb(184, 197, 197); border-color: black; color: black; font-size: 0.65cm;" data-bs-toggle="dropdown" aria-expanded="false">ID</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" style="font-size: 0.5cm;">Doctor ID</a></li>
+          <li><a class="dropdown-item" href="#" style="font-size: 0.5cm;">Nurse ID</a></li>
+          <li><a class="dropdown-item" href="#" style="font-size: 0.5cm;">Patient ID</a></li>
+        </ul>
+        <div class="col-sm-2" style="position: relative; padding-right: 20px;">
+            <input type="number"  style="padding-left: 10px;" class="form-control form-control-lg" id="colFormLabelSm" name= "user_name" >
+          </div>      
+        </div>
+    
+    <button type="submit" class="btn btn-dark btn:hover" style="text-align: center; padding: 10px 25px; margin:4px 2px;">Submit</button>
+          </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
+

@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/549d680672.js" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <title>Radiology Department</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+
+      <h4><i class="fab fa-atlassian" style=" margin-bottom: 5px; color: rgba(157, 219, 75, 0.925);"></i> Radiology <br>
+        Department</h4>
+      <ul>
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home </a></li>
+        <li> <a href="{% url 'login' %}"><i class="fas fa-user-circle"></i> Account</a></li>
+        <li><a href="{% url 'medical_devices' %}"><i class="fas fa-sitemap"></i> Department </a></li>
+
+        <li><a href="{% url 'doctors_data' %}"><i class="fas fa-user-md"></i>Doctor</a></li>
+        <li><a href="{% url 'patients_data' %}"><i class="fas fa-user-alt"></i>Patient</a></li>
+        <li><a href="{% url 'nurses' %}"><i class="fas fa-briefcase-medical"></i></i>Nurse</i></a></li>
+        {% comment %} <li><a href="{% url 'doctors_data' request.user.id %}"><i class="fas fa-user-md"></i>DTest</a></li>
+        <li><a href="{% url 'patient_test' request.user.id %}"><i class="fas fa-user-alt"></i>PTest</a></li> {% endcomment %}
+        <li><a href="{% url 'contact' %}"><i class="fas fa-address-book"></i></i>contact us !</i></a></li>
+        <li><a href="{% url 'complain' %}"><i class="fas fa-address-book"></i></i>Any complain ?!</i></a></li>
+
+        {% if request.user.is_nurse %}
+        <li><a href="{% url 'logout' %}"></i>logout</i></a></li>   
+        {% else %}{% endif %}
+
+        {% if request.user.is_doctor %}
+        <li><a href="{% url 'logout' %}"></i>logout</i></a></li>   
+        {% else %}{% endif %}
+
+        {% if request.user.is_patient%}
+        <li><a href="{% url 'logout' %}"></i>logout</i></a></li>   
+        {% else %}{% endif %}
+
+      </ul>
+      <div class="social_media">
+        <a href="{% url 'contact' %}"><i class="fab fa-facebook-f"></i></a>
+        <a href="{% url 'contact' %}"><i class="fab fa-twitter"></i></a>
+        <a href="{% url 'contact' %}"><i class="fab fa-instagram"></i></a>
+
+
+      </div>
+    </div>
+
+    <div class="main-content">
+
+       {% block main %}
+      {% endblock %}
+     
+      
+ 
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js'></script>
+</body>
+
+</html>

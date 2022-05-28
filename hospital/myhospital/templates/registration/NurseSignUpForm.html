@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+      <h1
+        style="color: rgb(49, 61, 68); background-color:rgb(75, 219, 197) ; margin-bottom: 0; font-size: 1cm; padding-left: 40px; padding-top: 42px;padding-bottom:17px;">
+        Please fill this form to add you as a Nurse</h1>
+      <form method="POST" action="" enctype="multipart/form-data" role="form"
+        style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(214, 212, 228);">
+        {% csrf_token %}
+
+        <div class="container-fluid">
+          <label for="first_name" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">First Name</label>
+          <div class="col-sm-4">
+            {{form.first_name}}
+          </div>
+          <label for="second_name" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Middle Name</label>
+          <div class="col-sm-4">
+            {{form.second_name}}
+          </div>
+          <label for="third_name" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.560cm; padding-left: 10px;">Last Name</label>
+          <div class="col-sm-4">
+            {{form.third_name}}
+          </div>
+          <label for="gender" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Gender</label>
+          <div class="col-sm-4">
+            {{form.gender}}
+          </div>
+          <label for="age" style="font-size: 0.60cm; padding-top: 10px; padding-left: 10px;">Enter your Age</label><br>
+          <div class="col-sm-4">
+            {{form.age}}
+          </div>
+          <label for="salary" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your Salary</label><br>
+          <div class="col-sm-4">
+            {{form.salary}}
+          </div>
+          <label for="email" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your Email</label><br>
+          <div class="col-sm-4">
+            {{form.email}}
+          </div>
+          <label for="address" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Address</label><br>
+          <div class="col-sm-4">
+            {{form.address}}
+          </div>
+          <label for="phone" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Your Phone</label><br>
+          <div class="col-sm-4">
+            {{form.phone}}
+          </div>
+          <label for="shift" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Your Shift</label><br>
+          <div class="col-sm-4">
+            {{form.shift}}
+          </div>
+          <label for="username" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">User name</label><br>
+          <div class="col-sm-4">
+            {{form.username}}
+          </div>
+          <label for="password1" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Password</label><br>
+          <div class="col-sm-4">
+            {{form.password1}}
+          </div>
+          <label for="password2" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Password again</label><br>
+          <div class="col-sm-4">
+            {{form.password2}}
+          </div>
+          
+          <div style="text-align: center;">
+            <button type="submit" name="action" class="btn btn-dark btn:hover"
+              style="text-align: center; padding: 10px 25px; margin:4px 2px;">Submit</button>
+
+          </div>
+        </div>
+      </form>
+{% endblock %}
+
+  
+  
+  

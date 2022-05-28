@@ -1,0 +1,66 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+      <h1> <i class="fas fa-user-md"></i> Doctors</h1>
+      <br>
+
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="{% url 'doctors_data' %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3);">Doctors_Data</a>
+          {% if request.user.is_doctor %}
+
+          <a class="navbar-brand" href="{% url 'doctor_spiciality' request.user.id %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3); ">Doctors_Spectiality</a>
+          <a class="navbar-brand" href="{% url 'doctor_qualification' request.user.id %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3); ">Doctors_Qualifications</a>
+          <a class="navbar-brand" href="{% url 'doctor_test' request.user.id %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3); ">Test</a>
+          <a class="navbar-brand" href="{% url 'doctor_appointment' request.user.id %}" style="color:black; background-color: rgba(55, 25, 25 ,0.3); ">Appointments_Data</a>
+               <a class="btn btn-success bnt-lg float-right" href="{% url 'doctor_signup' %}" role="button"><i class="fas fa-user-plus"></i>new
+                  Doctor</a>
+    
+        {% else %}{% endif %}
+
+
+
+      <h1
+        style="background-color: rgb(58, 40, 70); color: rgb(170, 199, 199); text-align: center; text-decoration: linen; padding-top: 0.25cm; font-variant-east-asian: ruby; padding-bottom: 0.25cm;">
+        Doctors Data</h1>
+
+      <table class="table  table-light table-striped table-hover">
+        <thead>
+          <tr>
+
+            <th scope="col">ID</th>
+            <th scope="col">First_name</th>
+            <th scope="col">Middel_Name</th>
+            <th scope="col">last_Name</th>
+            <th scope="col">age</th>
+            <th scope="col">shift</th>
+            <th scope="col">gender</th>
+            <th scope="col">mobile</th>
+            <th scope="col">address</th>
+            <th scope="col">email</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in doctors_data %}
+          <!-- PatientssData is the data that had retrieved from"mycursor.fetchall()" that exists in server.py to retrieve all data in doctorss table -->
+          <tr>
+
+            <td>{{data.user.id}}</td>
+            <td>{{data.first_name}}</td>
+            <td>{{data.second_name}}</td>
+            <td>{{data.third_name}}</td>
+            <td>{{data.age}}</td>
+            <td>{{data.shift}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.email}}</td>
+
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+{% endblock %}

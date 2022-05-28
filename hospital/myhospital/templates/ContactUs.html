@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1" style="color: white;"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="transition-delay: 0.4ms;">
+        <img src="{% static 'images/img8.jpeg' %}" class="d-block w-100" style="height: 13cm; filter: blur();" alt="...">
+        <div class="carousel-caption d-none d-md-block" style="background: rgba(200, 200, 200, 0.534);">
+          <h5 style="font-size: 1cm; color: rgb(48, 45, 45);font-weight: 150; padding-bottom: 50px;">Making health care better together..<i class="fas fa-hand-holding-heart" style="margin-left: 8px;"></i></h5>
+          <p style="font-size: 0.8cm; color: rgb(36, 40, 63); ">  </p>
+        </div>
+      </div>
+      <div class="carousel-item " style="transition-delay: 0.4ms;">
+        <img src="{% static 'images/img7.jpeg' %} " class="d-block w-100" style="height: 13cm; filter: blur();" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="font-size: 1.5cm; color: rgb(48, 45, 45);font-weight: 300; padding-bottom: 10px;">Radiological
+            Department..</h5>
+          <p style="font-size: 0.8cm; "> where the radiological examinations of patients are carried out ! <i
+              class="fas fa-heartbeat" style="margin-left: 8px;"></i></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/img6.jpeg' %} " class="d-block w-100" style="height: 13cm; filter: blur();" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="font-size: 1.5cm;  color:black"> Health.. ! </h5>
+          <p style="font-size: 0.8cm; color:black">here, you will find a medical services that you can trust !</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/img5.jpeg' %} " class="d-block w-100" style="height: 13cm; filter: blur();" alt="...">
+        <div class="carousel-caption d-none d-md-block" style="background: rgba(204, 199, 199, 0.541);">
+          <h5 style="font-size: 1.5cm;  color:black"> "A Hospital...</h5>
+          <p style="font-size: 0.8cm; color:black">A hospital is no place to be sick ! "<br> Samuel Goldwyn</p>
+        </div>
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="jumbotron jumbotron-fluid" style="height:fit-content">
+    <div class="container" > 
+      <h1 class="display-2"><i class="fab fa-atlassian" style=" margin-bottom: 5px;margin-left: 25px; color: rgb(114, 151, 65); size:4cm"></i>  Welcome .. !</h1>
+      <p class="lead" style="font-size: 0.75cm;"> &emsp; &emsp; To contact us you should to call this number 01234567891 OR 01231234567<br> &emsp; You can also send a mail to hospital123@icloud.com </p>
+      <div style="padding-top: 1cm; padding-left: 1cm;">
+    </div>
+    </div>
+  </div>
+{% endblock %}
+

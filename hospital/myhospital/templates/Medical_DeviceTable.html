@@ -1,0 +1,66 @@
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+      <h1> <i class="fas fa-sitemap" style="padding-right: 15px;"></i>Department</h1>
+      <br>
+      <nav class="navbar navbar-expand-lg navbar:hover bg-light"  style="background-color: rgb(178, 179, 184); padding-bottom: 5px; padding-top: 5px;">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="{% url 'medical_devices' %}" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Medical-Devices</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbar Nav:hover" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              
+               
+                  
+                  
+                    <a class="navbar-brand" href="{% url 'medical_companies' %}" style="color:black; font-size: 0.85m;padding-right: 25px; ">Medical_companies</a>
+                  
+    
+
+              
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <h1
+        style="background-color: rgb(58, 40, 70); color: rgb(170, 199, 199); text-align: center; text-decoration: linen; padding-top: 0.25cm;padding-bottom: 0.25cm; font-variant-east-asian: ruby;">
+        Medical_Devices</h1>
+
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+
+            <th scope="col">Device_ID</th>
+            <th scope="col">company_Name</th>
+            <th scope="col">Last_PPM</th>
+            <th scope="col">Last_Calibration</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in medical_device_data %}
+          <!-- Medical_DevicesData is the data that had retrieved from"mycursor.fetchall()" to retrieve all data in Medical_Device table that exists in data base -->
+          <tr>
+
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.last_PPM_date}}</td>
+            <td>{{data.last_caliberation_date}}</td>
+
+
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+{% endblock %}
+

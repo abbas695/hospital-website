@@ -1,0 +1,70 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+      <h1> <i class="fas fa-sitemap" style="padding-right: 15px;"></i>Department</h1>
+      <br>
+      <nav class="navbar navbar-expand-lg navbar:hover bg-light"  style="background-color: rgb(178, 179, 184); padding-bottom: 5px; padding-top: 5px;width: 100%;">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="{% url 'medical_devices' %}" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Medical-Devices</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbar Nav:hover" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              
+      
+                  
+                  
+                    <a class="navbar-brand" href="{% url 'medical_companies' %}" style="color:black; font-size: 0.85m;padding-right: 25px; ">Medical_companies</a>
+                  
+    
+
+              
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <h1
+        style="background-color: rgb(58, 40, 70); color: rgb(170, 199, 199); text-align: center; text-decoration: linen; padding-top: 0.25cm;padding-bottom: 0.25cm; font-variant-east-asian: ruby;">
+        Medical_companies</h1>
+
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+
+            <th scope="col">Name</th>
+            <th scope="col">Market_Name</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Engineer_Name</th>
+            <th scope="col">enggineer_mobile</th>
+            <th scope="col">PPMdate</th>
+            <th scope="col">calibrationDate</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in medical_companies_data %}
+          <!-- Medical_companyData is the data that had retrieved from"mycursor.fetchall()" to retrieve all data in Medical_company table in data base -->
+          <tr>
+
+            <td>{{data.name}}</td>
+            <td>{{data.market_name}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.engineer_name}}</td>
+            <td>{{data.engineer_phone}}</td>
+            <td>{{data.PPM_date}}</td>
+            <td>{{data.caliberation_date}}</td>
+
+
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

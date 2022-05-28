@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+        <h1
+          style="color: rgb(49, 61, 68); background-color:rgb(75, 219, 197) ; margin-bottom: 0; font-size: 1cm; padding-left: 40px; padding-top: 42px;padding-bottom:17px;">
+          Please fill this form to add your appointment</h1>
+          <div class="container-fluid" style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(214, 212, 228);">
+        <form method="POST" action="" enctype="multipart/form-data" role="form"
+          style="font-family: Arial, Helvetica, sans-serif;">
+          {% csrf_token %}
+
+          <label for="appointment_place" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">appointment place</label><br>
+          <div class="col-sm-4">
+            {{form.appointment_place}}
+          </div>
+
+          <label for="appointment_time" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">appointment time</label><br>
+          <div class="col-sm-4">
+            {{form.appointment_time}}
+          </div>
+
+          <label for="id_doctor" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">ID for the doctor</label><br>
+          <div class="col-sm-4">
+            {{form.id_doctor}}
+          </div>
+
+          <label for="id_patient" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">ID for the patient</label><br>
+          <div class="col-sm-4">
+            {{form.id_patient}}
+          </div>
+          
+          <div  style="text-align: center;">
+          <button type="submit" class="btn btn-dark btn:hover"
+            style="text-align: center; padding: 10px 25px; margin:4px 2px;">Submit</button>
+        
+          </div>  
+        </div>
+        </form>
+{% endblock %}

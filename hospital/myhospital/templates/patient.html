@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+      <!--<form>-->
+      <h1
+        style="color: rgb(49, 61, 68); background-color:rgb(220, 210, 233) ; margin-bottom: 0; font-size: 1cm; padding-left: 40px; padding-top: 42px;padding-bottom:17px;">
+        Please fill this form to add you as a Patient</h1>
+      <form method="POST" action="" enctype="multipart/form-data" role="form"
+        style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">
+        {% csrf_token %}
+
+        <div class="container-fluid">
+          <label for="name" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Name</label>
+          <div class="col-sm-4">
+            {{form.name}}
+          </div>
+          <label for="medical_report" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Medical Report</label>
+          <div class="col-sm-4">
+            {{form.medical_report}}
+          </div>
+          <!--<label for="lastname" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Last Name</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control form-control-lg" id="colFormLabelSm" name="last_name"
+              style="margin-bottom: 0; ">
+          </div>-->
+          <!--<label for="id" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Your ID</label>
+          <div class="col-sm-4">
+            <input type="password" class="form-control form-control-lg" id="colFormLabelSm" name="id"
+              style="margin-bottom: 0; ">
+          </div>-->
+          <label for="age" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.560cm; padding-left: 10px;">Enter Your Age</label>
+          <div class="col-sm-4">
+            {{form.age}}
+          </div>
+          <label for="patientbill" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm; padding-left: 10px;">Patient Bill</label>
+          <div class="col-sm-4">
+            {{form.patient_bill}}
+          </div>
+          <label class="form-check-label" for="flexRadioDefault1"
+            style=" margin-left: 10px; color: rgb(69, 73, 77); font-size: 0.65cm;">
+            Select a gender:
+          </label>
+          {{form.gender}}
+          <label for="email" style="font-size: 0.60cm; padding-top: 10px; padding-left: 10px;">Enter your
+            email</label><br>
+          <div class="col-sm-4">
+            {{form.email}}
+          </div>
+          <label for="phone" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your phone
+            number</label><br>
+          <div class="col-sm-4">
+            {{form.phone}}
+          </div>
+          <label for="address" style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Enter your
+            address</label><br>
+          <div class="col-sm-4">
+            {{form.address}}
+          </div>
+          <!--<label for="medicalreport" class="form-label col-sm-2 col-form-label "
+            style="font-size: 0.60cm;padding-top: 10px; padding-left: 10px;">Medical Report</label>
+          <div class="col-sm-4">
+            <input type="number" class="form-control form-control-lg" id="colFormLabelSm" name="medreport"
+              style="margin-bottom: 0; ">
+          </div>-->
+          <div style="text-align: center;">
+            <button type="submit" name="action" class="btn btn-dark btn:hover"
+              style="text-align: center; padding: 10px 25px; margin:4px 2px;">Submit</button>
+
+          </div>
+        </div>
+      </form>
+{% endblock %}
+
+  
+  
+  

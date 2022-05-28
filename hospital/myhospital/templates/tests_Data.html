@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+          <h1> <i class="fas fa-sitemap" style="padding-right: 15px;"></i>Department</h1>
+          <br>
+          <nav class="navbar navbar-expand-lg navbar:hover bg-light"  style="background-color: rgb(178, 179, 184); padding-bottom: 5px; padding-top: 5px;width:100%;">
+            <div class="container-fluid" >
+           
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbar Nav:hover" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  
+                    <a class="navbar-brand" href="#" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Tests</a>
+                    <a class="btn btn-success bnt-lg float-right" href="{% url 'create_test' %}" role="button"><i class="fas fa-user-plus"></i>Add Test</a>
+                  
+                    
+                  
+    
+                  
+    
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+            <h1
+                style="background-color: rgb(58, 40, 70); color: rgb(170, 199, 199); text-align: center; text-decoration: linen; padding-top: 0.25cm;padding-bottom: 0.25cm; font-variant-east-asian: ruby;">
+                Tests_Data</h1>
+
+            <table class="table  table-light table-hover">
+                <thead>
+                    <tr>
+
+                        <th scope="col">test_type</th>
+                        <th scope="col">cost</th>
+                        <th scope="col">average_time</th>
+                        <th scope="col">id_patient</th>
+                        <th scope="col">id_medical_device</th>
+                        <th scope="col">id_doctor</th>
+  
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in TestsData %}
+                    <!-- testsData is the data that had retrieved from"mycursor.fetchall()" that exists in server.py to retrieve all data in tests table -->
+                    <tr>
+
+                        <td>{{data.test_type}}</td>
+                        <td>{{data.cost}}</td>
+                        <td>{{data.average_time}}</td>
+                        <td>{{data.id_patient}}</td>
+                        <td>{{data.id_medical_device}}</td>
+                        <td>{{data.id_doctor}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+{% endblock %}        

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+                                  <div class="container-fluid" style="background-color: rgb(75, 219, 197); margin-bottom: 0; font-size: 1cm; padding-left: 15px; padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="navbar-brand" href="{% url 'login' %}" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Sign in</a>
+                                    <a class="navbar-brand" href="{% url 'SignUp' %}" style="color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Sign up</a>
+                                  </div>
+
+      <form style=" background-color:rgb(220, 210, 233)">
+        <h1 style="color: rgb(49, 61, 68); background-color:rgb(220, 210, 233) ; margin-bottom: 0; font-size: 1cm; padding-left: 15px; padding-top: 10px;" >Sign up :</h1>
+          <form action="" method="POST" style="font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">
+    
+        <label for="type"  style="font-size: 1cm; padding: 10px 25px; margin:4px 2px;">Please, choose your
+          work..</label><br>
+                                  <div class="container-fluid" style="background-color: rgb(220, 210, 233); margin-bottom: 0; font-size: 1cm; padding-left: 15px; padding-top: 10px;padding-bottom: 10px;">
+                                    <a class="navbar-brand" href="{% url 'doctor_signup' %}" style="background-color: rgba(55, 25, 25 ,0.3); color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Doctor</a>
+                                    <a class="navbar-brand" href="{% url 'nurse_signup' %}" style="background-color: rgba(55, 25, 25 ,0.3); color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Nurse</a>
+                                    <a class="navbar-brand" href="{% url 'patient_signup' %}" style="background-color: rgba(55, 25, 25 ,0.3); color:black; font-size: 0.85m;padding-right: 25px; border-right: 1px solid black;">Patient</a>
+                                  </div>
+      </form>
+                          <div class="jumbotron jumbotron-fluid" style=" background-color: rgb(220, 210, 233);">
+                      <div class="container" > 
+                        <p class="lead" style="font-size: 0.75cm;"> &emsp; &emsp; Radiology is a medical specialty that uses imaging to diagnose and treat diseases seen within the body,,,<br> &emsp; if you want to learn more about radiology department please press on this bottun.. </p>
+                        <div style="padding-top: 1cm; padding-left: 1cm;">
+                          <a target="_blank" href="https://www.royalfree.nhs.uk/services/services-a-z/radiology/about-radiology/#:~:text=Radiology%20is%20a%20medical%20specialty,diseases%20seen%20within%20the%20body.&text=The%20radiology%20department%20may%20also,range%20of%20equipment%20listed%20above."  style="background-color: rgb(220, 210, 233); color: rgb(49, 61, 68); border-color: black;font-size: 0.55cm; "class="btn btn-primary">Learn more</a>
+                      </div>
+                      </div>
+                    </div>
+{% endblock %}
